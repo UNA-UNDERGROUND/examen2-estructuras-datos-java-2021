@@ -1,4 +1,4 @@
-package cr.ac.una.util;
+package cr.ac.una.util.grafo;
 
 import java.util.ArrayList;
 import java.util.List;
