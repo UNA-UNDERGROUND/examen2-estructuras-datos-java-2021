@@ -46,5 +46,13 @@ public class Arbol {
         return new Arbol(nodoArbol);
     }
 
+    public boolean esSubArbol(Arbol arbol) {
+        Arbol arbolGen = generarArbol(arbol.getRaiz().getNombre());
+        if (arbolGen == null) {
+            return false;
+        }
+        return arbolGen.equals(arbol);
+    }
+
     private NodoArbol raiz;
 }
