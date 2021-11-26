@@ -2,6 +2,7 @@ package cr.ac.una.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * clase que representa un nodo del arbol con n hijos
@@ -154,6 +155,18 @@ public class NodoArbol {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NodoArbol nodoArbol = (NodoArbol) o;
+        // verificamos que el nombre, padre y hijos sean iguales
+        return Objects.equals(nombre, nodoArbol.nombre) &&
+                Objects.equals(padre, nodoArbol.padre) &&
+                Objects.equals(hijos, nodoArbol.hijos);
     }
 
     private String nombre = "";
