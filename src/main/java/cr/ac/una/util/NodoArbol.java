@@ -33,9 +33,8 @@ public class NodoArbol {
      */
     public List<NodoArbol> getAncestros() {
         List<NodoArbol> ancestros = new ArrayList<>();
-        // ancestros.add(this);
+        ancestros.add(this);
         if (padre != null) {
-            ancestros.add(padre);
             ancestros.addAll(padre.getAncestros());
         }
         return ancestros;
@@ -111,28 +110,18 @@ public class NodoArbol {
     public Integer distanciaNodos(NodoArbol nodo) {
         // primero verificamos el ancestro comun
         NodoArbol ancestroComun = getAncestroComunCercano(nodo);
-        // si no hay ancestro comun, entonces uno de los nodos es raiz
-        // por lo tanto, la distancia es la diferencia de altura
+        // si no hay ancestro comun, entonces no existen en el mismo arbol
         if (ancestroComun == null) {
-            // verificamos que solo uno de los 2 sea raíz
-            // y que solo uno puede tener un padre (xor)
-            // si esto no se cumple retornamos -1 (distancia infinita)
-            if (padre == null && nodo.padre == null) {
-                return -1;
-            }
-            if (padre != null && nodo.padre != null) {
-                return -1;
-            }
-            return diferenciaAltura(nodo);
+            return -1;
         }
 
         // verificamos si uno de los nodos es ancestro comun
         // si es asi, sumamos la distancia entre el ancestro comun y el nodo
         if (ancestroComun.nombre.equals(this.getNombre())) {
-            return ancestroComun.distanciaNodos(nodo);
+            return ancestroComun.diferenciaAltura(nodo);
         }
         if (ancestroComun.getNombre().equals(nodo.nombre)) {
-            return nodo.distanciaNodos(this);
+            return nodo.diferenciaAltura(this);
         }
         // si hay solo un ancestro comun, significa que el unico ancestro es la raíz
         // por lo tanto sumamos ambas alturas

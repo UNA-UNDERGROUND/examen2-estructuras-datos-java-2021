@@ -30,10 +30,10 @@ public class Ejercicio1 {
         Arbol arbol = new Arbol(nodos[0]);
         String nodoA = "8";
         String nodoB = "12";
-        //System.out.println( //
-        //        "la distancia entre el nodo" + nodoA //
-        //                + " y el nodo " + nodoB //
-        //                + " es " + arbol.distanciaNodos(nodoA, nodoB));
+        System.out.println( //
+                "la distancia entre el nodo" + nodoA //
+                        + " y el nodo " + nodoB //
+                        + " es " + arbol.distanciaNodos(nodoA, nodoB));
         nodoA = "3";
         nodoB = "10";
         System.out.println( //
