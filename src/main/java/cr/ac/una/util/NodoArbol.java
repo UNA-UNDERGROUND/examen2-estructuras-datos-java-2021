@@ -163,9 +163,8 @@ public class NodoArbol {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NodoArbol nodoArbol = (NodoArbol) o;
-        // verificamos que el nombre, padre y hijos sean iguales
+        // verificamos que el nombre y hijos sean iguales
         return Objects.equals(nombre, nodoArbol.nombre) &&
-                Objects.equals(padre, nodoArbol.padre) &&
                 Objects.equals(hijos, nodoArbol.hijos);
     }
 
