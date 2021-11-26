@@ -1,7 +1,7 @@
 package cr.ac.una.ejercicios;
 
-import cr.ac.una.util.grafo.Arbol;
-import cr.ac.una.util.grafo.NodoArbol;
+import cr.ac.una.util.arbol.Arbol;
+import cr.ac.una.util.arbol.NodoArbol;
 
 public class Ejercicio3 {
     public void run() {

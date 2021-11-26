@@ -1,4 +1,4 @@
-package cr.ac.una.util.grafo;
+package cr.ac.una.util.arbol;
 
 public class Arbol {
 
