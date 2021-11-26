@@ -1,5 +1,6 @@
 package cr.ac.una;
 
+import cr.ac.una.ejercicios.Ejercicio1;
 import cr.ac.una.ejercicios.Ejercicio3;
 
 public final class App {

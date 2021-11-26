@@ -1,4 +1,4 @@
-package cr.ac.una;
+package cr.ac.una.ejercicios;
 
 import cr.ac.una.util.Arbol;
 import cr.ac.una.util.NodoArbol;
