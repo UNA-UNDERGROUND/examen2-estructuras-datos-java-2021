@@ -1,5 +1,7 @@
 package cr.ac.una.ejercicios;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ejercicio2 {
@@ -32,17 +34,17 @@ public class Ejercicio2 {
      * 
      * @param val numero iteraciones
      */
-    public void generarTriangulo(int val){
+    public List<String> generarTriangulo(int val){
+        List<String> lineas = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
         val = val + 1;
         int[] a = new int[1];
         for (int i = 1; i <= val; i++) {
+            // limpiamos el StringBuilder
+            sb.setLength(0);
             int[] x = new int[i];
             // tenemos que llenar de espacios la linea segun el numero de iteraciones
             // hay que tener en cuenta que el espacio entre numeros es 4
-            int lim = val - i;
-            for (int j = 0; j < lim; j++) {
-                System.out.print(" ");
-            }
             for (int j = 0; j < i; j++) {
                 if (j == 0 || j == (i - 1)) {
                     x[j] = 1;
@@ -50,17 +52,34 @@ public class Ejercicio2 {
                     x[j] = a[j] + a[j - 1];
                 }
                 if(x[j] < 10){
-                    System.out.print(" ");
+                    sb.append(" ");
                 }
-                System.out.print(x[j] + "    ");
+                sb.append(x[j] + "    ");
             }
             a = x;
-            System.out.println();
+            lineas.add(sb.toString());
         }
+        return lineas;
+    }
+
+    public void imprimirTriangulo(List<String> lineas){
+        int len = lineas.get(lineas.size() - 1).length();
+        for (int i = 0; i < lineas.size(); i++) {
+            // tenemos que imprimir la linea con el numero de espacios
+            // para que quede alineado
+            int espacios = (len - lineas.get(i).length()) / 2;
+            for (int j = 0; j < espacios; j++) {
+                System.out.print(" ");
+            }
+            // luego imprimimos la linea
+            System.out.println(lineas.get(i));
+        }
+
     }
 
 
     public void run() {
-        generarTriangulo(8);
+        List<String> lineas = generarTriangulo(8);
+        imprimirTriangulo(lineas);
     }
 }
