@@ -76,7 +76,7 @@ public class NodoArbol {
     /**
      * recupera la altura del nodo
      * 
-     * @return altura del nodo
+     * @return altura del nodo 
      */
     public Integer getAltura() {
         List<NodoArbol> ancestros = getAncestros();

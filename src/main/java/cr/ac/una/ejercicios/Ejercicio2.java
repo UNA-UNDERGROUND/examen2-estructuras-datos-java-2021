@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ejercicio2 {
-
+   /* 
+   Parte uno del ejercicio sin embargo utilice un metodo iterativo para generar las lineas en la párte 2
+   */
     public static int formula(int i, int j){
         if(j==0||j==i){
             return 1;
