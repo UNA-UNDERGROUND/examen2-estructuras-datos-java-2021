@@ -6,6 +6,14 @@ import java.util.List;
 
 public class Ejercicio2 {
 
+    public static int formula(int i, int j){
+        if(j==0||j==i){
+            return 1;
+        }else{
+            return formula(i-1, j-1)+ formula(i-1, j);
+        }
+    }
+
     /**
      * genera las filas del triangulo de pascal de manera recursiva
      * 
@@ -45,17 +53,24 @@ public class Ejercicio2 {
             int[] x = new int[i];
             // tenemos que llenar de espacios la linea segun el numero de iteraciones
             // hay que tener en cuenta que el espacio entre numeros es 4
+            // esto es el equivalente a la funcion, pero en su version iterativa
+            // inicio de bloque
             for (int j = 0; j < i; j++) {
+                // condicion base
                 if (j == 0 || j == (i - 1)) {
                     x[j] = 1;
-                } else {
+                } 
+                // caso iterativo / recursivo
+                else {
                     x[j] = a[j] + a[j - 1];
                 }
+                // fin del bloque, el resto es para imprimir el resultado
                 if(x[j] < 10){
                     sb.append(" ");
                 }
                 sb.append(x[j] + "    ");
             }
+            // fin de bloque
             a = x;
             lineas.add(sb.toString());
         }
